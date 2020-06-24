@@ -16,7 +16,7 @@ int Knapsack(int weight[] , int val[] , int W , int n)
             dp[i][j] = 0;
             
             else if(weight[i-1] <=  j)
-                    dp[i][j] = max(val[i-1] + dp[i-1][j - weight[i-1]] , dp[i-1][j]); // whwn including a item do it dp[i] instead of dp[i-1]
+                    dp[i][j] = max(val[i-1] + dp[i][j - weight[i-1]] , dp[i-1][j]); // whwn including a item do it dp[i] instead of dp[i-1]
                    
             else
                 dp[i][j] = dp[i-1][j];
@@ -27,9 +27,9 @@ int Knapsack(int weight[] , int val[] , int W , int n)
 }
 int main() {
     //memset(dp , -1   , sizeof(dp));
-    int val[] = { 60, 100, 120 };
-    int weight[] = { 10, 20, 30 }; 
-    int W = 50;
+    int val[] =  {10 , 30 ,20};
+    int weight[] = {5 , 10 , 15};
+    int W = 100;
     int n = sizeof(val)/sizeof(val[0]);
     
     cout << Knapsack(weight , val ,W , n );
