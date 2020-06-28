@@ -33,7 +33,7 @@ int countWays(int coins[] , int n , int sum)
 }
 
 int main() {
-    int coins[] = {1, 2, 3};
+    int coins[] = {1, 2, 5};
     int n = sizeof(coins)/sizeof(coins[0]);
     int sum = 5;
     
